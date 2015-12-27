@@ -3,20 +3,6 @@
 var assert = require('assert');
 var pcrypt = require('../helper/pcrypt');
 
-suite('pcrypt#createSalt');
-
-test('Verify salt length', function(done) {
-	var expectedSize = 128;
-	// According to Node.js documentation, using the hex encoding every byte
-	// corresponds to 2 characters
-	// https://nodejs.org/dist/latest-v5.x/docs/api/buffer.html#buffer_buffer
-	var expectedLength = expectedSize * 2;
-	pcrypt.createSalt(function(salt) {
-		assert.equal(salt.length, expectedLength);
-		done();
-	});
-});
-
 suite('pcrypt#hashPassword');
 
 test('Simple password and salt', function(done) {
