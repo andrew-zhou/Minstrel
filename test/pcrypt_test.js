@@ -17,7 +17,7 @@ test('Simple password and salt', function(done) {
 	'e80a933b8574760486120c6d4713d20d8c49422c190892719ea79e5d7b6f76b619e43ba4' +
 	'1b307cba57fa4523821633e453';
 	pcrypt.hashPassword(password, salt, function(hash) {
-		assert.equal(hash, correctHash);
+		assert.strictEqual(hash, correctHash);
 		done();
 	});
 });
@@ -37,7 +37,7 @@ test('Complex password and salt', function(done) {
 	'67c37379120ccedf73b84a0e007eb6416c5586e23d6112d11c1fddc2077ae8ae4a3e255e' +
 	'11755a523a3d573671af05239c';
 	pcrypt.hashPassword(password, salt, function(hash) {
-		assert.equal(hash, correctHash);
+		assert.strictEqual(hash, correctHash);
 		done();
 	});
 });

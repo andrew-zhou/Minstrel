@@ -11,7 +11,8 @@ var pcrypt = {};
 
 /**
  * Generates a salt.
- * @param {function} callback - Callback function once the salt is generated. Should take the salt string as its one argument.
+ * @param {function} callback - Callback function once the salt is generated. 
+ * 	Should take the salt string as its one argument.
  * @throws Throws exception on crypto.randomBytes failure.
  */
 pcrypt.createSalt = function(callback) {
@@ -26,7 +27,8 @@ pcrypt.createSalt = function(callback) {
  * Generates a hash for a password with a given salt using pbkdf2.
  * @param {string} password - The password to hash
  * @param {string} salt - Salt used to hash the password
- * @param {function} callback - Callback function once the hash is generated. Should take the hash string as its one argument.
+ * @param {function} callback - Callback function once the hash is generated. 
+ * 	Should take the hash string as its one argument.
  * @throws Throws an exception on crypto.pbkdf2 failure.
  */
 pcrypt.hashPassword = function(password, salt, callback) {
