@@ -5,7 +5,7 @@ var pcrypt = require('../helper/pcrypt');
 
 var schema = new mongoose.Schema({
 	username: { type: String, unique: true, required: true },
-	username_uppercase: {type: String, index: true}, // Use for indexing.
+	username_uppercase: { type: String, index: true }, // Use for indexing.
 	email: { type: String, unique: true, required: true },
 	password: { type: String, required: true }, // Store the hash here.
 	password_salt: { type: String }
@@ -16,6 +16,8 @@ var schema = new mongoose.Schema({
  * @param {String} name - The username of the user to search for.
  * @param {function} callback - The MongooseJS query callback function. Should
  * 	take in two parameters: an error object and a results object.
+ * @returns {Query|null} A query for a user of the given name if no callback is
+ * 	passed in, else null.
  */ 
 schema.statics.searchByUsername = function(name, callback) {
 	return this.findOne({ username_uppercase: name.toUpperCase() }, callback);
