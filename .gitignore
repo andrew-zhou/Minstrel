@@ -28,3 +28,6 @@ node_modules
 
 # Browserified/Gruntified static content
 public
+
+# SASS cache
+client/.sass-cache
