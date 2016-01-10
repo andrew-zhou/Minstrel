@@ -1,8 +1,14 @@
 doctype html
 html
   head
-    title Hello World
-    link(rel = 'stylesheet', href = 'style.css')
+    include ./include/head.jade
   body
-    h1 Hello #{name}
-    script(src = 'app.js')
+    .container-fluid
+      // Main row for the page
+      .row
+        include ./include/sidebar.jade
+        // Column for the content
+        .col-xs-12.col-sm-10.col-sm-offset-2#page-content
+          .jumbotron
+            h1.text-center Welcome to Minstrel!
+    include ./include/foot.jade

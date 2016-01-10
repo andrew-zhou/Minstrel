@@ -1,0 +1,14 @@
+@import 'bootstrap/mixins/gradients';
+
+// Font styling
+// $font-family-sans-serif:		Times New Roman;
+
+// Sidebar styling
+$sidebar-border-right:			solid 2px #DEDEDE;
+
+#sidebar {
+	border-right: $sidebar-border-right;
+	position:fixed;
+	height:100%;
+	// @include gradient-horizontal(#F5F5F5, #FFFFFF);
+}

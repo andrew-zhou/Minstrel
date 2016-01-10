@@ -3,9 +3,11 @@
 var mongoose = require('mongoose');
 var pcrypt = require('../helper/pcrypt');
 
+// TODO: Store original username/email in non-unique field, keep index as 
+// lowercase, trim, unique 
 var schema = new mongoose.Schema({
 	username: { type: String, unique: true, required: true },
-	username_uppercase: { type: String, index: true }, // Use for indexing.
+	username_uppercase: { type: String, unique: true, index: true }, // Use for indexing.
 	email: { type: String, unique: true, required: true },
 	password: { type: String, required: true }, // Store the hash here.
 	password_salt: { type: String }

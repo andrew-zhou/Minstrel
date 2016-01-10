@@ -28,6 +28,8 @@ mongoose.connection.on('open', function() {
 
 routes(app);
 
+// TODO: Error handling
+
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Server created.');
 });
